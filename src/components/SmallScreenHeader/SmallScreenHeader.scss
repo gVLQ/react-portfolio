@@ -1,0 +1,12 @@
+@import '../../App.sass';
+
+.title-bar {
+    span {
+        float: right;
+        color: $primary-color;
+    }
+    .menu-icon::after {
+        background: $primary-color;
+        box-shadow: 0 7px 0 $primary-color, 0 14px 0  $primary-color;
+    }
+}

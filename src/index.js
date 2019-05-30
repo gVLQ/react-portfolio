@@ -1,6 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
+import 'foundation-sites/dist/css/foundation.min.css';
+import 'foundation-sites/scss/foundation.scss'
+import 'foundation-sites';
+
+import 'primereact/resources/themes/nova-light/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+
+import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

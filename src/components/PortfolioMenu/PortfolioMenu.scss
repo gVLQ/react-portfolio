@@ -1,0 +1,26 @@
+@import '../../App.sass';
+
+.portfolio-menu {
+	background-color: $primary-color;
+}
+
+.side-menu
+{
+	li {
+		padding: .5rem;
+		width: 90%;
+		list-style-type: none;
+	}
+	button {
+		width: 100%;
+	}
+	.svg-inline--fa {
+		margin-right: .5em;
+	}
+}
+
+.copyright {
+	position: absolute;
+    bottom: 0;
+    left: 1.2em;
+}

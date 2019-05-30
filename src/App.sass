@@ -1,0 +1,81 @@
+$primary-color: white
+$primary-background: #dcedc8
+$background-light: #F3F4F8
+$border-light: darken($background-light, 2%)
+
+=absolute($top, $left, $right, $bottom)
+	position: absolute
+	top: $top
+	left: $left
+	right: $right
+	bottom: $bottom
+
+=translate($x,$y)
+	-webkit-transform: translate($x,$y)
+	-webkit-transform: translate3d($x,$y,0)
+	-ms-transform: translate($x,$y)
+	-ms-transform: translate3d($x,$y,0)
+	transform: translate($x,$y)
+	transform: translate3d($x,$y,0)
+
+.portfolio__section 
+    margin: 3vh 5vw
+	   
+.portfolio__grid
+	display: flex
+	flex:
+		direction: row
+		wrap: wrap
+	align:
+		content: flex-start
+		items: center
+	justify-content: center
+	max-width: 100%
+	height: 100%
+	margin: 0 auto
+	padding: 20px 0 0
+	list-style: none
+
+.portfolio__grid-item
+	display: flex
+	flex:
+		direction: column
+		grow: 0
+		shrink: 0
+		basis: 260px
+	align-items: center
+	justify-content: center
+	position: relative
+	height: 280px
+	padding: 1em
+	margin-right: 20px
+	margin-bottom: 20px
+	font:
+		size: 3rem
+		weight: 600
+	color: #ecf0f7
+	background: rgba(0, 0, 0, 0.2)
+	// opacity: .5
+	box-shadow: inset 0px 0px 0px 2px  $border-light
+	+translate(0,0)
+	transition: transform 0.14s ease-in, text-shadow 0.1s ease-in
+	will-change: transform
+	cursor: pointer
+
+	// Pseudo elements ------------------
+	&:before
+		content: ''
+		+absolute(0,0,0,0)
+		background: none
+		border-radius: 3px
+		box-shadow: 0 10px 24px 0px rgba(0,0,0,0.02), 0 8px 20px -2px rgba(0,0,0,0.06), 0 6px 10px -6px rgba(0,0,0,0.10)
+		transition: opacity 0.1s ease-in
+		will-change: opacity
+		opacity: 0
+
+	// CSS state ------------------------
+	&:hover
+		+translate(2px,-10px)
+
+		&:before
+			opacity: 1

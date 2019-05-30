@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import './App.sass';
+import $ from 'jquery';
+import 'foundation-sites';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import PorfolioMenu from "./components/PortfolioMenu/PortfolioMenu";
+import SmallScreenHeader from './components/SmallScreenHeader/SmallScreenHeader';
+import AboutSection from './components/AboutSection/AboutSection';
+import PortfolioSection from './components/PortfolioSection/PortfolioSection';
+import ResumeSection from './components/ResumeSection/ResumeSection';
+import ContactSection from './components/ContactSection/ContactSection';
+class App extends Component {
+
+  componentDidMount = () => {
+    $(document).foundation();
+  }
+
+  render() {
+    return (
+      <div className="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <BrowserRouter>
+        <PorfolioMenu/>
+        <div className="off-canvas-content" data-off-canvas-content>
+          <SmallScreenHeader/>
+            <Switch>
+              <Route path="/" exact component={AboutSection} />
+              <Route path="/portfolio" component={PortfolioSection} />
+              <Route path="/resume" component={ResumeSection} />
+              <Route path="/contact" component={ContactSection} />
+            </Switch>
+        </div>
+      </BrowserRouter>
+      </div>
+    );
+  }
 }
 
 export default App;
