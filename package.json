@@ -19,7 +19,7 @@
     "react-foundation": "^0.9.6",
     "react-netlify-form": "^2.1.5",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-stack-grid": "^0.7.1",
     "react-transition-group": "^1.2.1",
     "vertical-timeline-component-for-react": "^1.0.6"
